@@ -1,5 +1,6 @@
 export const INCREMENT = 'INCREMENT'
 
+export const START_WARS = 'START_WARS'
 
 export const START = '_START'
 export const SUCCESS = '_SUCCESS'

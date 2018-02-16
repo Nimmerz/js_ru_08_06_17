@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {increment} from '../AC'
+import {loadStartWars} from '../AC/startWars'
 
 class Counter extends Component {
     static propTypes = {
         counter: PropTypes.number,
         increment: PropTypes.func.isRequired
     };
+
+    componentWillMount() {
+        this.props.loadStartWars()
+    }
 
     render() {
         return (
@@ -26,4 +31,8 @@ class Counter extends Component {
 
 export default connect((state) => ({
     counter: state.count
-}), { increment })(Counter)
+}), {
+    increment,
+    loadStartWars
+
+})(Counter)
