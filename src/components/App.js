@@ -14,6 +14,7 @@ class App extends Component {
         return (
             <ConnectedRouter history = {history}>
                 <Counter/>
+
             </ConnectedRouter>
         )
     }
