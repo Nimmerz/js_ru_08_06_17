@@ -1,7 +1,3 @@
-
-
-
-
 import {START_WARS, START} from '../constants'
 
 
@@ -14,7 +10,6 @@ export default (state = defaultStore, action) => {
 
     switch (type) {
         case START_WARS + START: {
-            debugger
             return state
         }
 
