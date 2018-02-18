@@ -1,41 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import {connect} from 'react-redux'
 import {createStore} from 'redux';
-import {increment} from '../AC';
-import {decrement} from '../AC';
+import {increment, decrement} from '../AC/counterNick';
 
 
 
-function counter (state=0, action) {
-    switch (action.type) {
-        case 'INCREMENT': {
-            return state + 1;
-        }
-        case 'DECREMENT': {
-            return state - 1;
-        }
-        default: {
-            return state;
-        }
-    }
-}
 
-const store = createStore(counter);
 
 class CounterNick extends Component {
+
+    static propTypes = {
+        count: PropTypes.number,
+        increment: PropTypes.func,
+        decrement: PropTypes.func,
+    }
+
     render() {
         return (
             <div>
-                <button onClick={() => this.props.dispatch({type: 'DECREMENT'})}>-</button>
+                <button onClick={this.props.decrement}>-</button>
                 {this.props.count}
-                <button onClick={() => this.props.dispatch({type: 'INCREMENT'})}>+</button>
+                <button onClick={this.props.increment}>+</button>
             </div>
         );
     }
 }
 
-export default connect((state) => ({ count: state}),
-{
+export default connect((state) => {
+    return {
+        count: state.counterNick
+    }
+}, {
     increment,
     decrement
-})(Counter)(CounterNick);
+})(CounterNick);
