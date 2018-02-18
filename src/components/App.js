@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Counter from './Counter'
 import CounterNick from './NickCounter';
+import StarWars from './StarWars';
 import 'react-select/dist/react-select.css'
 import {ConnectedRouter} from 'react-router-redux'
 
@@ -15,14 +16,16 @@ class App extends Component {
         console.log('---', 0)
         return (
             <ConnectedRouter history={history}>
-                {/*<Counter/>*/}
-                <CounterNick/>
+                <div>
+                    <Counter/>
+                    <CounterNick/>
+                    <StarWars/>
+                </div>
             </ConnectedRouter>
 
         )
     }
 }
-
 
 
 export default App

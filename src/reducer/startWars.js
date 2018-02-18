@@ -1,22 +1,26 @@
-import {START_WARS, START} from '../constants'
-
+import {START_WARS, START, SUCCESS, FAIL} from '../constants'
 
 const defaultStore = {
     links: []
-}
+};
 
 export default (state = defaultStore, action) => {
-    const {type} = action
+    const {type} = action;
 
     switch (type) {
         case START_WARS + START: {
-            return state
+            return state;
         }
-
-
+        case  START_WARS + SUCCESS: {
+            return defaultStore.setIn(['people', 'films', 'species', 'vehicles', 'starships']);
+        }
+        case START_WARS + FAIL: {
+            return 'Connect is FAILED';
+        }
+        default: {
+            return state;
+        }
     }
-
-    return state
 }
 
 /*

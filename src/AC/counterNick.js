@@ -1,5 +1,4 @@
 import {NICK_INCREMENT, NICK_DECREMENT} from '../constants';
-
 import {push, replace} from 'react-router-redux'
 
 

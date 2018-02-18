@@ -5,10 +5,8 @@ export default (count = 0, action) => {
 
     switch (type) {
         case INCREMENT: {
-            debugger
             return count + 1
         }
-
 
     }
 

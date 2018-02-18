@@ -4,7 +4,7 @@ export function loadStartWars() {
     return (dispatch) => {
         dispatch({
             type: START_WARS + START
-        })
+        });
 
         fetch(`https://swapi.co/api/?format=json`)
             .then(res => {
@@ -21,7 +21,7 @@ export function loadStartWars() {
                 dispatch({
                     type: START_WARS + FAIL,
                     payload: { id, error }
-                })
+                });
                 dispatch(replace('/error'))
             })
     }
