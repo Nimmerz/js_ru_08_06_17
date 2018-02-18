@@ -15,12 +15,11 @@ export function loadStartWars() {
             })
             .then(response => dispatch({
                 type: START_WARS + SUCCESS,
-                payload: { id, response }
+                payload: response
             }))
             .catch(error => {
                 dispatch({
-                    type: START_WARS + FAIL,
-                    payload: { id, error }
+                    type: START_WARS + FAIL
                 });
                 dispatch(replace('/error'))
             })
