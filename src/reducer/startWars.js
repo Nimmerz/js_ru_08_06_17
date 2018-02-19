@@ -1,7 +1,7 @@
 import {START_WARS, START, SUCCESS, FAIL} from '../constants'
 
 const defaultStore = {
-    links: []
+    links: {}
 };
 
 export default (state = defaultStore, action) => {
@@ -12,7 +12,7 @@ export default (state = defaultStore, action) => {
             return state;
         }
         case  START_WARS + SUCCESS: {
-            return {list: action.payload};
+            return {list:  action.payload};
 
         }
         case START_WARS + FAIL: {

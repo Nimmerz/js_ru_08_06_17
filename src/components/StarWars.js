@@ -12,13 +12,24 @@ class StarWars extends Component {
         this.props.loadStartWars();
     }
 
+    renderList = () => {
+        const {list} = this.props
+        return Object.values(list).map((item) => {
+            return (
+                <p>
+                    {item}
+                </p>)
+        })
+    }
+
     render() {
+
         return (
             <div>
-                {this.props.startWars.list}
+                {this.renderList()}
             </div>
         );
     }
 }
 
-export default connect(state => ({startWars: state.startWars}), {loadStartWars})(StarWars);
+export default connect(state => ({list: state.startWars.list}), {loadStartWars})(StarWars);
