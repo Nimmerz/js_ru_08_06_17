@@ -12,7 +12,8 @@ export default (state = defaultStore, action) => {
             return state;
         }
         case  START_WARS + SUCCESS: {
-            return state;
+            return {list: action.payload};
+
         }
         case START_WARS + FAIL: {
             return 'Connect is FAILED';
@@ -21,7 +22,10 @@ export default (state = defaultStore, action) => {
             return state;
         }
     }
+
 }
+
+
 
 /*
 

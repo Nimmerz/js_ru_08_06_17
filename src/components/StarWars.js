@@ -15,13 +15,13 @@ class StarWars extends Component {
     render() {
         return (
             <div>
-                {this.props.startWars.payload.map(item => <p>
-                    {item.films}
-                </p>)}
-
+                {this.props.startWars}
             </div>
         );
     }
 }
 
-export default connect(state => ({startWars: state.startWars}), {loadStartWars})(StarWars);
+
+
+
+export default connect(state => ({links: state.startWars}), {loadStartWars})(StarWars);
