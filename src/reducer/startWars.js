@@ -12,10 +12,7 @@ export default (state = defaultStore, action) => {
             return state;
         }
         case  START_WARS + SUCCESS: {
-            // Что ты этим хотел скачазть, у тебя defaultStore это просто объект
-            // поставь вот тут дебагер и посмотри что тебе приходит в action, и запиши значение в state
-            //defaultStore.setIn(['people', 'films', 'species', 'vehicles', 'starships']);
-            return state
+            return state;
         }
         case START_WARS + FAIL: {
             return 'Connect is FAILED';

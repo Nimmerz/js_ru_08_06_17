@@ -1,32 +1,27 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import {loadStartWars} from '../AC/startWars';
 
 
-
-
-
 class StarWars extends Component {
     static propTypes = {
-        id: PropTypes.string,
         loadStartWars: PropTypes.func,
     };
+
+    componentDidMount() {
+        this.props.loadStartWars();
+    }
+
     render() {
         return (
             <div>
-                {this.props.id}
-                <p>
-                {this.props.loadStartWars}
-                </p>
+                {this.props.startWars.payload.map(item => <p>
+                    {item.films}
+                </p>)}
+
             </div>
         );
     }
 }
 
-export default connect((state) => {
-    return {
-        count: state.startWars
-    }
-}, {
-    loadStartWars
-})(StarWars);
+export default connect(state => ({startWars: state.startWars}), {loadStartWars})(StarWars);
